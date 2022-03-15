@@ -1,0 +1,2 @@
+export PROJECT_ID=
+gcloud functions deploy tokensCdc --entry-point=cdcFirestore --runtime=nodejs16 --trigger-event="providers/cloud.firestore/eventTypes/document.write" --max-instances=3 --trigger-resource="projects/${PROJECT_ID}/databases/(default)/documents/FederatedTokens/{federatedToken}/FieldTokens/{fieldToken}"
